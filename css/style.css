@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: url(../image/bg-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: white;
+  opacity: 0.9;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: white;
+  opacity: 0.9;
+  font-weight: lighter;
+  margin: 10px 0 5px;
+  display: block;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="date"]:focus {
+  box-shadow: 0 0 5px rgba(1, 13, 21, 0.5);
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+#displayDob {
+  font-size: 18px;
+  opacity: 0.9;
+  font-weight: lighter;
+  color: white;
+  margin-top: 20px;
+}
+
+#clearBtn {
+  background-color: #e74c3c;
+}
+
+#clearBtn:hover {
+  background-color: #c0392b;
+}
+
