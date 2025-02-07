@@ -4,7 +4,7 @@ AgeCalc Pro is a simple and efficient web application that calculates your age i
 
 ## 📆 Demo Screenshot
 
-![Screenshot of Project](assets/screenshot.jpg)
+![Screenshot of Project](assets/screenshot/screenshot.jpg)
 
 ## 🔗 Live Demo
 
