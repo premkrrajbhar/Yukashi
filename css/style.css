@@ -2,17 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  min-height: 100vh;  
   background: url(../image/bg-img.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -23,6 +20,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 8px;
   padding: 30px;
+  margin: 30px;
   width: 100%;
   max-width: 500px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -49,7 +47,6 @@ label {
   opacity: 0.9;
   font-weight: lighter;
   margin: 10px 0 5px;
-  display: block;
 }
 
 input[type="date"] {
