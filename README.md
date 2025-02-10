@@ -29,6 +29,25 @@ Check out the app live here: **[AgeCalc Pro](https://premkrrajbhar.github.io/Age
 - **Calculate Age**: Click the "Calculate" button to see your age in years, months and days.
 - **Reset**: Click the "Reset" button to clear all inputs and results.
 
+## 📂 Project Structure
+
+```
+├── README.md
+├── assets/
+│   ├── favicon/
+│   │   └── agecalcpro-favicon.png
+│   └── screenshot/
+│       └── screenshot.jpg
+├── css/
+│   └── style.css
+├── image/
+│   └── bg-img.jpg
+├── index.html
+└── script/
+    └── script.js
+```
+
+
 ## 🚀 How to Run Locally
 
 - Step 1: Clone the repository:
