@@ -1,39 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>AgeCalc Pro</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yukashi - Feel the Time!</title>
 
-    <meta name="description" content="AgeCalc Pro is a precise and efficient age calculator tool that calculates your age in years, months, and days based on any given date." />
-    <meta name="keywords" content="Age Calculator, Date of Birth, AgeCalc Pro, Online Age Calculator, Age in Years, Months, Days" />
-    <meta name="robots" content="index, follow" />
+    <!-- Favicon link -->
+    <!-- <link rel="shortcut icon" href="assets/favicon/yukashi-favicon.png" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="assets/favicon/yukashi.png" type="image/img">
 
-    <link rel="shortcut icon" href="assets/favicon/agecalcpro-favicon.png" type="image/x-icon">
+    <!-- Meta Tags -->
+    <meta name="description"
+        content="Yukashi is a gentle time calculator that helps you measure the age, time between two moments, and milestones — inspired by the Japanese word for nostalgia and cherished memories.">
+    <meta name="keywords"
+        content="Yukashi, Age Calculator, Time Between Dates, Date Difference, Moments Tracker, Japanese Word, Nostalgia Tool, Emotional Time Calculator">
+    <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>AgeCalc Pro</h1>
-      <p>
-        AgeCalc Pro is a precise and efficient tool for calculating your age in
-        years, months and days based on any given date
-      </p>
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" /><br />
+    <!-- Bootstrap CSS CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-      <label for="currentDate">Age at the Date of:</label>
-      <input type="date" id="currentDate" /><br />
+    <!-- AOS CDN CS link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-      <button type="submit" id="calDob">Calculate</button>
-      <p id="displayDob"></p>
+    <!-- Font awesome CSS CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <button type="reset" id="clearBtn">Reset</button>
-    </div>
+    <!-- Custom CSS link -->
+    <link rel="stylesheet" href="css/style.css">
 
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#home">
+                    <div class="d-flex justify-content-center text-black fw-bold align-items-center">
+                        <img src="assets/logo/yukashi-logo.png" alt="" height="40"
+                            class="d-inline-block align-text-center">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-black" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#gettingstarted">Getting Started</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#measuremoments">Measure Moments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Home section -->
+    <section id="home" class="text-center py-5 min-vh-100 d-flex align-content-center align-items-center text-black">
+        <div class="container pt-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-sm-12 col-md-3" data-aos="zoom-out" data-aos-duration="1300">
+                    <!-- img -->
+                    <img src="assets/images/home-img.png" class="img-fluid" alt="yukashi-logo">
+
+                </div>
+                <div class="col-12 col-sm-12 col-md-9">
+                    <h1 class="fs-1 lh-lg fw-bolder mt-5" data-aos="fade-left" data-aos-duration="1000">Yukashi</h1>
+                    <p class="fs-4 lh-lg" data-aos="fade-left" data-aos-duration="1000">Some moments pass quietly,
+                        others stay with us forever. <br>
+                        With <strong>Yukashi</strong>, trace the time between those moments — whether it’s the years
+                        since a memory, the days until a milestone, or the quiet passage between two points in your
+                        story. <br>
+                        Not just a tool — a way to feel time, and remember what it means to you.
+                    </p>
+                    <a href="#measuremoments" class="btn btn-success fs-5 p-3 rounded-5 mt-5 border-0 "
+                        data-aos="fade-right" data-aos-duration="1000">Measure Your Moments</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Feature section -->
+    <section id="features" class="text-center py-5 text-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">Discover What
+                        Yukashi Can Do</h2>
+                    <p class="lh-lg fs-5 mb-5 lead" data-aos="zoom-in" data-aos-duration="1000">Yukashi offers a simple
+                        yet powerful way to measure time. Whether you’re calculating your age, tracking the time between
+                        important dates, or reflecting on milestones, Yukashi makes it easy to connect with your
+                        personal journey. With results in years, months, and days, every moment is measured with
+                        accuracy and care. Best of all, Yukashi is free, easy to use, and designed to help you feel the
+                        passage of time in a meaningful way.</p>
+                </div>
+
+                <div class="col-12">
+                    <div class="row justify-content-center">
+
+                        <div class="col-12 col-sm-12 col-md-3  mb-5 customCardWidth" data-aos="zoom-in-up"
+                            data-aos-duration="1000">
+                            <div class="card h-100 border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-1"><i class="fa-solid fa-check-circle"></i></h5>
+                                    <h6 class="card-subtitle mb-2 text-black">Accurate Results</h6>
+                                    <p class="card-text text-black text-opacity-75">Yukashi ensures every calculation is
+                                        precise and reliable. Whether you're measuring your age or the time between two
+                                        dates, you can count on accurate results every time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-3 mb-5 customCardWidth" data-aos="zoom-in-up"
+                            data-aos-duration="1000">
+                            <div class="card h-100 border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-1"><i class="fa-solid fa-lightbulb"></i></h5>
+                                    <h6 class="card-subtitle mb-2 text-black">Effortless to Use</h6>
+                                    <p class="card-text text-black text-opacity-75">Yukashi’s clean and simple interface
+                                        means you can start measuring time in just a few clicks. No complicated steps —
+                                        just enter your dates, and we’ll handle the rest.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-3 mb-5 customCardWidth" data-aos="zoom-in-up"
+                            data-aos-duration="1000">
+                            <div class="card h-100 border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-1"><i class="fa-solid fa-file-alt"></i></h5>
+                                    <h6 class="card-subtitle mb-2 text-black">Results in Clear Formats</h6>
+                                    <p class="card-text text-black text-opacity-75">Get your time calculations in years,
+                                        months, and days. Whether you’re tracking your age or counting down to a
+                                        milestone, our output is clear and easy to understand.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-3 mb-5 customCardWidth" data-aos="zoom-in-up"
+                            data-aos-duration="1000">
+                            <div class="card h-100 border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-1"><i class="fa-solid fa-unlock"></i></h5>
+                                    <h6 class="card-subtitle mb-2 text-black">Free and Accessible</h6>
+                                    <p class="card-text text-black text-opacity-75">Yukashi is completely free to use,
+                                        with no hidden fees or sign-ups. Access our tools anytime, anywhere, and start
+                                        connecting with time in a meaningful way.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About section -->
+    <section id="about" class="text-center py-5 text-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">The Meaning of
+                        Time: Discover Yukashi
+                    </h2>
+                    <div class="lh-lg fs-5" data-aos="zoom-in" data-aos-duration="1000">
+                        <p class="lead">"Yukashi" is a Japanese word that evokes a sense of nostalgia and the beauty of
+                            time passing — a reminder that the moments we hold dear are not just measured in minutes,
+                            but in the emotions and experiences they carry with them.</p>
+                        <p class="lead">With Yukashi, we provide a tool that allows you to reflect on your journey by
+                            calculating time between two points — whether it’s the years that have passed, the months
+                            until a milestone, or the precious memories you’ve accumulated along the way.</p>
+                        <p class="lead">Yukashi isn’t just a time calculator; it's a way to connect with time, to feel
+                            the moments that have shaped you, and to remember what truly matters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- guide section -->
+    <section id="gettingstarted" class="text-center py-5 min-vh-100 text-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">Start Your
+                        Journey: A Simple Guide to Using Yukashi</h2>
+                    <p class="fs-5 mb-4 lead" data-aos="zoom-in" data-aos-duration="1000">Getting started is easy, and
+                        we’re here to guide you every step of the way. Whether you’re looking to calculate your age,
+                        track the time between two significant dates, or reflect on the moments that matter most,
+                        Yukashi makes it simple.</p>
+                    <div class="row d-flex">
+                        <div class="col-12 col-sm-12 col-md-6 text-start" data-aos="fade-right"
+                            data-aos-duration="1000">
+                            <p class="fs-5"><strong>1.To Calculate Age:</strong><br>To calculate your age, simply enter
+                                your birthdate in the input field, select the current date, and click Calculate. Yukashi
+                                will show you your age in years, months, and days.</p>
+                            <p class="fs-5"><strong>2.To Measure Time Between Two Dates:</strong><br>If you want to
+                                measure the time between two dates, just enter both dates in the input fields and hit
+                                Calculate. Yukashi will display the exact time passed between them in years, months, and
+                                days.
+                            </p>
+                            <p class="fs-5"><strong>3.To Clear Your Data:
+                                </strong><br>if you want to clear everything, simply click the Reset icon to remove all
+                                the data and start fresh.
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-center align-items-center"
+                            data-aos="zoom-in" data-aos-duration="1000">
+                            <div class="ratio ratio-16x9">
+                                <video src="assets/media/tutorial-video.mp4" autoplay muted loop></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track your moments section -->
+    <main id="measuremoments" class="py-5 text-center text-black">
+        <section>
+            <div class="container">
+                <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">Measure Your
+                    Moments
+                </h2>
+                <p class="lead mb-5" data-aos="zoom-in" data-aos-duration="1000">Now that you’ve learned how Yukashi
+                    works, it’s time to reflect on the moments that matter most. Enter your dates, click Calculate, and
+                    see the time between them unfold in years, months, and days. It’s not just about numbers — it’s
+                    about the journey you’ve lived and the moments that have shaped who you are. Start tracking your
+                    story with Yukashi.</p>
+
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form class="" data-aos="zoom-in" data-aos-duration="1000">
+                            <div class="input-group mb-3">
+                                <input type="date" class="form-control" id="dob" />
+                                <span class="input-group-text text-white border-0">Start Date</span>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="date" class="form-control" id="currentDate" />
+                                <span class="input-group-text text-white border-0">End Date</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <p id="displayDob"></p>
+                            </div>
+
+                            <div class="mb-3">
+                                <button type="submit" class="btn text-white w-50" id="calDob">Calculate</button>
+                            </div>
+
+                            <div class="mb-3">
+                                <button type="reset" class="btn text-white w-50" id="clearBtn">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Testimonial section -->
+    <section id="testimonials" class="py-5 text-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 text-center">
+                    <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">Stories from
+                        the Heart
+                    </h2>
+                    <p class="lead mb-5 pb-5" data-aos="zoom-in" data-aos-duration="1000">Each moment tells a story, and
+                        every journey is unique. Discover how Yukashi has helped others reflect, remember, and reconnect
+                        with the moments that matter most. These are not just reviews — they’re pieces of time, shared
+                        from the heart.</p>
+                </div>
+                <div class="col-12 col-sm-12" data-aos="zoom-in" data-aos-duration="1000">
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-1.jpg" alt="User Photo 1"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>“"I used Yukashi to remember the day my
+                                                daughter was born. Seeing the years, months, and days so clearly helped
+                                                me appreciate how far we've come. It felt like reliving the memory all
+                                                over again."</em></p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Aiko Tanaka</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-2.jpg" alt="User Photo 2"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"Yukashi showed me how long it's been since
+                                                I met my best friend. I never realized how much time had passed until
+                                                now. It’s a beautiful way to see time, not just count it."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Haruto Sakamoto</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-3.jpg" alt="User Photo 3"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"I’ve used many tools before, but Yukashi
+                                                feels different. It’s soft, thoughtful, and helps you see your life in
+                                                chapters—not just dates. It helped me feel connected to my past."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Ren Takahashi</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-4.jpg" alt="User Photo 4"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"I wanted to know the time between two
+                                                important moments in my life. Yukashi didn’t just give me numbers—it
+                                                gave me perspective. A simple tool with a gentle heart."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Yui Nakamura</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-5.jpg" alt="User Photo 5"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"I used Yukashi to mark the time since my
+                                                grandparents passed. It gently reminded me how their love still lives in
+                                                every passing day. It brought comfort in a quiet, beautiful way."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Sora Fujimoto</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-6.jpg" alt="User Photo 6"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"Yukashi helped me count the days since I
+                                                met someone special. Seeing the time pass made those memories feel
+                                                closer, not farther. It was like holding onto a feeling that never
+                                                fades."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Miyu Hayashi</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card mx-auto text-center border-0">
+                                    <div class="card-body text-black">
+                                        <img src="assets/images/testimonial/user-7.jpg" alt="User Photo 7"
+                                            class="rounded-circle mb-3" width="60" height="60">
+                                        <p class="card-text opacity-75"><em>"Yukashi helped me trace the time between
+                                                when I left home and when I returned. It made me realize how far I’ve
+                                                come, and how much those years shaped me. Quietly powerful."</em>
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 opacity-75">Hina Kobayashi</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ section -->
+    <section id="faq" class="text-center py-5 text-black min-vh-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <h2 class="mb-4 fs-1 lh-lg fw-semibold" data-aos="zoom-out" data-aos-duration="1000">Every Question
+                        Holds a Story</h2>
+                    <p class="lead mb-5" data-aos="zoom-in" data-aos-duration="1000">Behind every question is a moment
+                        that matters. Whether you're here to understand how Yukashi works or simply curious about its
+                        purpose, we’re here to guide you. These answers are crafted to help you make the most of each
+                        meaningful moment you track.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="col-lg-8 col-sm-10">
+                    <div class="accordion" id="accordionExample">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne">
+                                    What does the word "Yukashi" mean?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    "Yukashi" is a Japanese word that evokes a sense of nostalgia, warmth, and the quiet
+                                    beauty of time passing. It reflects the feelings we hold for meaningful memories and
+                                    cherished moments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    What is Yukashi used for?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    Yukashi helps you measure the time between two moments — whether it's calculating
+                                    your age, remembering a special day, or seeing how long it's been since an important
+                                    event.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    How do I calculate my age with Yukashi?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    Just enter your birthdate and the current date and Yukashi will show your age in
+                                    years, months and days — simply and beautifully.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Can I reset my input or start over?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    Absolutely. Just click the reset icon to clear the dates and results, so you can
+                                    start fresh whenever you like.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed shadow-none" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    Does Yukashi show accurate results?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    Yes, Yukashi is designed to give accurate and reliable results. It carefully
+                                    calculates the exact difference between dates — in years, months, and days — so you
+                                    can trust it to reflect your moments with precision.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer section -->
+    <footer class="pt-4 pb-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h5 class="text-light">Yukashi</h5>
+                    <ol class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="#features" class="text-light text-decoration-none">Features</a></li>
+                        <li><a href="#about" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#gettingstarted" class="text-light text-decoration-none">Getting Started</a>
+                        </li>
+                        <li><a href="#measuremoments" class="text-light text-decoration-none">Measure Moments</a></li>
+                        <li><a href="#testimonials" class="text-light text-decoration-none">Testimonial</a></li>
+                        <li><a href="#faq" class="text-light text-decoration-none">FAQ</a></li>
+                    </ol>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-light">Yukashi</h5>
+                    <p><a href="https://github.com/premkrrajbhar/Yukashi" class="text-light text-decoration-none"
+                            target="_blank">View Yukashi Open Source
+                            Project <br><span class="customSize">(MIT Licensed)</span></a></p>
+                </div>
+            </div>
+            <div class="text-center text-light pt-3 border-top">
+                <p class="small">© 2025 Yukashi. All rights reserved by <a href="https://github.com/premkrrajbhar"
+                        class="text-light text-decoration-none" target="_blank">Prem Kumar</a></p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- AOS CDN JS link and init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Bootstrap JS CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS link -->
     <script src="script/script.js"></script>
-  </body>
+
+</body>
+
 </html>
