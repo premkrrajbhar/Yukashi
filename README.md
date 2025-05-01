@@ -88,7 +88,7 @@ Check out the app live here: **[Yukashi](https://premkrrajbhar.github.io/Yukashi
 
 ## 📝LICENSE
 
-Tasketu is open-source software released under the MIT License. This means you are free to use, modify, and distribute the code as per the terms of the MIT license. See the [LICENSE](/LICENSE) file for more information.
+Yukashi is open-source software released under the MIT License. This means you are free to use, modify, and distribute the code as per the terms of the MIT license. See the [LICENSE](/LICENSE) file for more information.
 
 ## 🤝 Contributing
 
